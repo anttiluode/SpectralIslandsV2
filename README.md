@@ -62,6 +62,9 @@ The latest addition to the Spectral Islands architecture is the **Deterministic 
 These scripts represent the mathematical proof of **Karl Pribram’s Holonomic Brain Theory** combined with our Geometric Neuron architecture. It answers the ultimate question: *If the brain doesn't store digital pixels, how does it reconstruct a solid, continuous reality?*
 
 ### The Theory: Neurons as Frequency Brushes
+
+![pic](fft.png)
+
 Instead of storing reality as discrete bits, the brain acts as a literal holographic plate. 
 1. **The Brushes (Neuron Bodies):** Individual geometric neurons lock onto specific spatial frequencies (Koopman Eigenmodes) via structural plasticity. They hold this spectra in their physical bodies, driven by Johnson-Nyquist thermal noise.
 2. **The Laser (Sensory Input):** Incoming signals wash over the cortical sheet, activating only the specific neurons whose internal frequencies match the signal.
