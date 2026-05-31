@@ -1,5 +1,10 @@
 # SpectralIslandsV2: The Biological Takens Manifold
 
+Deterministic world maker and holographic image re construction show the holographic plate re construction from 
+neuron islands idea. (Spectra is held in neuron bodies as Johnson \ nyquist noise and projected via axon to ephaptic 
+field where qualia somehow happens). Deterministic world maker has less fields to show the idea better, else 
+same code. 
+
 ![pic](cable_neuron_v2_probe.png) 
 
 **A PyTorch implementation of the Geometric Neuron, mapping the Spectral Archipelago theory directly to the biophysics of the Axon Initial Segment (AIS).**
