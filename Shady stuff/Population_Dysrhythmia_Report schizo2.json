@@ -1,0 +1,1673 @@
+{
+  "metadata": {
+    "total_files": 13,
+    "analysis_window_start": 0.0,
+    "analysis_window_duration": 10.0,
+    "takens_tau": 4,
+    "svd_window": 100
+  },
+  "population_summary": {
+    "total_channel_collapses": 202,
+    "total_channel_saturations": 24,
+    "files_with_dysrhythmia": 13,
+    "healthy_files": 0,
+    "average_temporal_to_frontal_latency_sec": 2.060866666666667
+  },
+  "channel_vulnerability_map": {
+    "Fp2": {
+      "collapses": 11,
+      "saturations": 1
+    },
+    "F8": {
+      "collapses": 8,
+      "saturations": 2
+    },
+    "T4": {
+      "collapses": 6,
+      "saturations": 3
+    },
+    "T6": {
+      "collapses": 9,
+      "saturations": 1
+    },
+    "O2": {
+      "collapses": 13,
+      "saturations": 0
+    },
+    "Fp1": {
+      "collapses": 11,
+      "saturations": 0
+    },
+    "F7": {
+      "collapses": 12,
+      "saturations": 1
+    },
+    "T3": {
+      "collapses": 11,
+      "saturations": 2
+    },
+    "T5": {
+      "collapses": 11,
+      "saturations": 2
+    },
+    "O1": {
+      "collapses": 13,
+      "saturations": 0
+    },
+    "F4": {
+      "collapses": 10,
+      "saturations": 1
+    },
+    "C4": {
+      "collapses": 8,
+      "saturations": 3
+    },
+    "P4": {
+      "collapses": 12,
+      "saturations": 1
+    },
+    "F3": {
+      "collapses": 11,
+      "saturations": 1
+    },
+    "C3": {
+      "collapses": 11,
+      "saturations": 2
+    },
+    "P3": {
+      "collapses": 11,
+      "saturations": 1
+    },
+    "Fz": {
+      "collapses": 12,
+      "saturations": 1
+    },
+    "Cz": {
+      "collapses": 10,
+      "saturations": 2
+    },
+    "Pz": {
+      "collapses": 12,
+      "saturations": 0
+    }
+  },
+  "file_details": {
+    "s01.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.8174357894492051,
+          "variance": 0.02826276746055575,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.8643160485541855,
+          "variance": 0.010818958372289213,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 1.0244489219463102,
+          "variance": 0.004657358400386238,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.9732154815407292,
+          "variance": 0.005717764288445907,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 0.8629893028654014,
+          "variance": 0.004919510175357395,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.8517200247977353,
+          "variance": 0.030249679256036804,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.8600228633097577,
+          "variance": 0.007435754564657563,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 6.816
+        },
+        "T3": {
+          "baseline_stability_mean": 0.823168014004616,
+          "variance": 0.00990692663856955,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 0.8607460260303759,
+          "variance": 0.004892331894875429,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "O1": {
+          "baseline_stability_mean": 0.8341378209826243,
+          "variance": 0.0023225424447311884,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.756
+        },
+        "F4": {
+          "baseline_stability_mean": 0.8657767395342639,
+          "variance": 0.008712671381461033,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.76
+        },
+        "C4": {
+          "baseline_stability_mean": 0.8694901261017944,
+          "variance": 0.004630289556468052,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 0.8347483240475341,
+          "variance": 0.004383288239781699,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 0.8319640691572794,
+          "variance": 0.015764143547807717,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C3": {
+          "baseline_stability_mean": 0.8705166220940415,
+          "variance": 0.00939459377927348,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 4.24
+        },
+        "P3": {
+          "baseline_stability_mean": 0.78953012946867,
+          "variance": 0.00376227407774772,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.756
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.860523349805945,
+          "variance": 0.010272184717062692,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.8761843699366649,
+          "variance": 0.008187311633392149,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.752
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.7770856176988702,
+          "variance": 0.0023033231326818958,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": {
+        "temporal_mean_onset_sec": 9.764,
+        "frontal_mean_onset_sec": 9.76,
+        "latency_front_minus_temp_sec": -0.0039999999999995595,
+        "causal_direction": "Frontal -> Temporal"
+      }
+    },
+    "s02.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.745434483705534,
+          "variance": 0.040973971726500254,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.9809363951663956,
+          "variance": 0.035537849548811354,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 1.000842215921403,
+          "variance": 0.026729063337529797,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.8151356479786619,
+          "variance": 0.009237623787980683,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 0.788283284748789,
+          "variance": 0.015111315762609158,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.7224679739494395,
+          "variance": 0.04039219984247277,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.7722322575997752,
+          "variance": 0.051946798434222376,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.76
+        },
+        "T3": {
+          "baseline_stability_mean": 0.8787983984791592,
+          "variance": 0.035330178181534486,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 0.8829313466424265,
+          "variance": 0.00983111620716598,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 0.8287604622247063,
+          "variance": 0.004248672074091966,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.8952557923798453,
+          "variance": 0.019491202323301024,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C4": {
+          "baseline_stability_mean": 1.0256201444911013,
+          "variance": 0.006649461090456701,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 0.891443279598521,
+          "variance": 0.0373440059488042,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 0.760814924139349,
+          "variance": 0.02746896494820216,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C3": {
+          "baseline_stability_mean": 0.7958653667076625,
+          "variance": 0.018973272921360983,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 0.8793136462019815,
+          "variance": 0.01732825352018316,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.7744157015844358,
+          "variance": 0.028980637347491803,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.8160641653266172,
+          "variance": 0.021370039425863206,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.875711272092508,
+          "variance": 0.006611810451076892,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.76
+        }
+      },
+      "propagation_analysis": "Insufficient lock-ins to calculate latency cascade."
+    },
+    "s03.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.8744448182697147,
+          "variance": 0.00421198061542089,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.8782868950210203,
+          "variance": 0.004261011033976075,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 0.9146523083035667,
+          "variance": 0.0032545130209183557,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.8153096864136752,
+          "variance": 0.0020569055130562077,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 5.552
+        },
+        "O2": {
+          "baseline_stability_mean": 0.7810481026880978,
+          "variance": 0.0011903445007657386,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.8819798138789855,
+          "variance": 0.00416374786598198,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.8959730225463662,
+          "variance": 0.005884339427169986,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 5.824
+        },
+        "T3": {
+          "baseline_stability_mean": 0.9094980312300726,
+          "variance": 0.0064525022715885925,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "T5": {
+          "baseline_stability_mean": 0.864540666732803,
+          "variance": 0.008351958063385772,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 0.795879061278804,
+          "variance": 0.0029790886916217624,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.8636232479340565,
+          "variance": 0.004378493857570359,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C4": {
+          "baseline_stability_mean": 0.8714206951265265,
+          "variance": 0.0053525061056336415,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.74
+        },
+        "P4": {
+          "baseline_stability_mean": 0.8262660454975281,
+          "variance": 0.0021329321120816657,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 5.448
+        },
+        "F3": {
+          "baseline_stability_mean": 0.8651382603608972,
+          "variance": 0.004022566703402671,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C3": {
+          "baseline_stability_mean": 0.8820213820002528,
+          "variance": 0.0053800746163036265,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 0.8455384831481908,
+          "variance": 0.0051409079686592874,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.8507546070485821,
+          "variance": 0.0036293111124456046,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.8528228648497316,
+          "variance": 0.0037103649726971067,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.752
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.848671775951354,
+          "variance": 0.004105160164231684,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 0.756
+        }
+      },
+      "propagation_analysis": "Insufficient lock-ins to calculate latency cascade."
+    },
+    "s04.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 1.0289622539890941,
+          "variance": 0.008504759058054118,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.9864593141861185,
+          "variance": 0.0028170745173201764,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 0.9971980756199064,
+          "variance": 0.0041615418254567155,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 6.856
+        },
+        "T6": {
+          "baseline_stability_mean": 1.0182294963383127,
+          "variance": 0.002667776051881642,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 1.0341006854918227,
+          "variance": 0.0026077993291961127,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 1.0351759725386043,
+          "variance": 0.005577652390282398,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 1.0255489697349696,
+          "variance": 0.013493197120065437,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T3": {
+          "baseline_stability_mean": 1.0237251193138739,
+          "variance": 0.008062490160435634,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 1.0219017313198875,
+          "variance": 0.012352110776717705,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 1.0384295257832197,
+          "variance": 0.0038173931527326803,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 1.0478279266391437,
+          "variance": 0.00292050863377496,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C4": {
+          "baseline_stability_mean": 1.0500784317272829,
+          "variance": 0.000832460221360458,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 1.005986308529632,
+          "variance": 0.017264577781298418,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 1.028433212465804,
+          "variance": 0.006612050787174525,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C3": {
+          "baseline_stability_mean": 1.047956587155724,
+          "variance": 0.0019255979752190826,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 1.0215187475317158,
+          "variance": 0.013198177955291672,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 1.0231653845735922,
+          "variance": 0.0063818582987453555,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 1.043222707669312,
+          "variance": 0.00197229129964407,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "Pz": {
+          "baseline_stability_mean": 1.0272121819726354,
+          "variance": 0.007596764579857137,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": "Insufficient lock-ins to calculate latency cascade."
+    },
+    "s05.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.920239161134689,
+          "variance": 0.002761068337491822,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.965667968171878,
+          "variance": 0.0029533734980873934,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 0.9474235914469975,
+          "variance": 0.001957605232241755,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.9097523159361959,
+          "variance": 0.002749901397026951,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 0.492
+        },
+        "O2": {
+          "baseline_stability_mean": 0.8395529894347106,
+          "variance": 0.003447227536086913,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.932417717707917,
+          "variance": 0.003976821380055608,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.9533392341184205,
+          "variance": 0.003746296467610269,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "T3": {
+          "baseline_stability_mean": 1.0613036120545698,
+          "variance": 0.0007107244086952035,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 0.862528848022838,
+          "variance": 0.004026775855241286,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 0.8374013464206093,
+          "variance": 0.0030279629720619395,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.8193154714453378,
+          "variance": 0.056842765870503846,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 6.196
+        },
+        "C4": {
+          "baseline_stability_mean": 0.9285872236441832,
+          "variance": 0.0024706822039059443,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 0.8964567928930327,
+          "variance": 0.0032364949146324587,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 0.90557950722012,
+          "variance": 0.004503271384859961,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 7.392
+        },
+        "C3": {
+          "baseline_stability_mean": 0.829662439314763,
+          "variance": 0.015085190766983779,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 0.8544524465643936,
+          "variance": 0.009989006306858979,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.8873483247238391,
+          "variance": 0.004587936110589524,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.9038256928405366,
+          "variance": 0.002699498743446547,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.756
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.9095846064656753,
+          "variance": 0.003633886271576508,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 8.816
+        }
+      },
+      "propagation_analysis": {
+        "temporal_mean_onset_sec": 0.492,
+        "frontal_mean_onset_sec": 6.7940000000000005,
+        "latency_front_minus_temp_sec": 6.3020000000000005,
+        "causal_direction": "Temporal -> Frontal"
+      }
+    },
+    "s06.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.7700821318211275,
+          "variance": 0.022784632534060375,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "F8": {
+          "baseline_stability_mean": 0.8709005369351575,
+          "variance": 0.0093116173427285,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "T4": {
+          "baseline_stability_mean": 0.9527829406018323,
+          "variance": 0.004745997689729051,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.8477137514673292,
+          "variance": 0.0023350395068397235,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 0.8263565690611913,
+          "variance": 0.003309684219227062,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.7945076758483284,
+          "variance": 0.0302420632105944,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "F7": {
+          "baseline_stability_mean": 0.8514086984106266,
+          "variance": 0.013765226595364307,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "T3": {
+          "baseline_stability_mean": 0.8862856189221786,
+          "variance": 0.01001020934924453,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 0.853016723244403,
+          "variance": 0.012276645894819485,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 2.872
+        },
+        "O1": {
+          "baseline_stability_mean": 0.8094010072519563,
+          "variance": 0.0015479609192048654,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.8608975378212065,
+          "variance": 0.01129564189755975,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "C4": {
+          "baseline_stability_mean": 0.9289044297331112,
+          "variance": 0.00530381577820698,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 0.8702481123542475,
+          "variance": 0.0033859702659674016,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 0.8401278773297572,
+          "variance": 0.016548690132449955,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "C3": {
+          "baseline_stability_mean": 0.8875453099846823,
+          "variance": 0.008008843829023575,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.752
+        },
+        "P3": {
+          "baseline_stability_mean": 0.8851808571599824,
+          "variance": 0.003011312695828636,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.8153869362502292,
+          "variance": 0.014127664072216451,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.8311309866836691,
+          "variance": 0.0140324507078378,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.752
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.8457366694223956,
+          "variance": 0.005732007836920521,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": {
+        "temporal_mean_onset_sec": 2.872,
+        "frontal_mean_onset_sec": 9.764,
+        "latency_front_minus_temp_sec": 6.8919999999999995,
+        "causal_direction": "Temporal -> Frontal"
+      }
+    },
+    "s08.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.8214139422240971,
+          "variance": 0.006388277776181401,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.752
+        },
+        "F8": {
+          "baseline_stability_mean": 0.8454159242559881,
+          "variance": 0.0033314040445420953,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 0.8926504382450307,
+          "variance": 0.005308613519696873,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.8895977972216672,
+          "variance": 0.006320857959046055,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 0.8170996339294951,
+          "variance": 0.0016902781460802633,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.8116001482493764,
+          "variance": 0.005182531021675288,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.8460274631762236,
+          "variance": 0.0026156173086892076,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T3": {
+          "baseline_stability_mean": 0.8896286942840835,
+          "variance": 0.003368603844805547,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.748
+        },
+        "T5": {
+          "baseline_stability_mean": 0.9181219941999733,
+          "variance": 0.004286685978695107,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 2.86
+        },
+        "O1": {
+          "baseline_stability_mean": 0.8456022321609038,
+          "variance": 0.0032526943079144435,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.24
+        },
+        "F4": {
+          "baseline_stability_mean": 0.833091088029951,
+          "variance": 0.003224412382026487,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.744
+        },
+        "C4": {
+          "baseline_stability_mean": 0.8813332025580647,
+          "variance": 0.004783557189740837,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.756
+        },
+        "P4": {
+          "baseline_stability_mean": 0.8358746880110822,
+          "variance": 0.0023288701550480666,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 2.828
+        },
+        "F3": {
+          "baseline_stability_mean": 0.82213857424245,
+          "variance": 0.0029213566334128156,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 0.36
+        },
+        "C3": {
+          "baseline_stability_mean": 0.8509348135688085,
+          "variance": 0.0044101353960733355,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "P3": {
+          "baseline_stability_mean": 0.8744352743257703,
+          "variance": 0.005989411186684078,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.76
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.8144828152289173,
+          "variance": 0.0035169371875924432,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.32
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.8571987603007053,
+          "variance": 0.004401104221132794,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.76
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.8611625875089622,
+          "variance": 0.0054068273085182165,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": {
+        "temporal_mean_onset_sec": 6.303999999999999,
+        "frontal_mean_onset_sec": 5.2940000000000005,
+        "latency_front_minus_temp_sec": -1.009999999999999,
+        "causal_direction": "Frontal -> Temporal"
+      }
+    },
+    "s09.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.8886912388567862,
+          "variance": 0.012432272130922932,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.884561233490794,
+          "variance": 0.02020338098898544,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 0.8912066888522571,
+          "variance": 0.013343286434647621,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.9050687232530314,
+          "variance": 0.008509218848448909,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 0.8109183314817879,
+          "variance": 0.013862733529801807,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.837971884600198,
+          "variance": 0.023538085552730677,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.8692213820936241,
+          "variance": 0.015830886817287622,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T3": {
+          "baseline_stability_mean": 0.9136682341084555,
+          "variance": 0.011279180251543553,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 0.9068778323430998,
+          "variance": 0.011930117584201242,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 0.809523093683055,
+          "variance": 0.007492402953137417,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.9093937905611283,
+          "variance": 0.01588279988047135,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C4": {
+          "baseline_stability_mean": 0.9316678782507751,
+          "variance": 0.00852296698380362,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 0.8834539203721465,
+          "variance": 0.006253683625452561,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 0.9167408437232615,
+          "variance": 0.015117851415603104,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C3": {
+          "baseline_stability_mean": 0.9378480728854022,
+          "variance": 0.019403643345255458,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 0.8717995160189536,
+          "variance": 0.00971104815181516,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.873528499652781,
+          "variance": 0.04433197676230381,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 1.0138859069017896,
+          "variance": 0.0021818445027678777,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.935193548837096,
+          "variance": 0.005162821545349596,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": "Insufficient lock-ins to calculate latency cascade."
+    },
+    "s10.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.9370660943721916,
+          "variance": 0.020699269247161742,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.9305797050479938,
+          "variance": 0.015703581576521485,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 9.756
+        },
+        "T4": {
+          "baseline_stability_mean": 1.0523671818290397,
+          "variance": 0.00264424402299683,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 1.0130889486433712,
+          "variance": 0.004513381789749251,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 2.352
+        },
+        "O2": {
+          "baseline_stability_mean": 0.9890560364075472,
+          "variance": 0.00718834517658308,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.9646563342914399,
+          "variance": 0.01940035033220118,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.9912115689270814,
+          "variance": 0.01703926791245252,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T3": {
+          "baseline_stability_mean": 1.0266680865629703,
+          "variance": 0.002582383347128776,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 9.764
+        },
+        "T5": {
+          "baseline_stability_mean": 1.063590115734381,
+          "variance": 0.000950371619237075,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 0.9728993982168465,
+          "variance": 0.0071780358308510105,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.9838820321698714,
+          "variance": 0.008881542731439592,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "C4": {
+          "baseline_stability_mean": 0.9952863327470952,
+          "variance": 0.00933399293365573,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 2.016
+        },
+        "P4": {
+          "baseline_stability_mean": 1.0271385907174233,
+          "variance": 0.008349312441418231,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 0.9949299280212116,
+          "variance": 0.007531002313810199,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 3.836
+        },
+        "C3": {
+          "baseline_stability_mean": 0.9894098349470123,
+          "variance": 0.009200941622901625,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 0.9862260456614466,
+          "variance": 0.013868987091662477,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 9.704
+        },
+        "Fz": {
+          "baseline_stability_mean": 1.015471131159204,
+          "variance": 0.004636035436659944,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.9952643873229622,
+          "variance": 0.009025812520308053,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 1.312
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.9920210213535003,
+          "variance": 0.017638886940668903,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": {
+        "temporal_mean_onset_sec": 6.058,
+        "frontal_mean_onset_sec": 3.836,
+        "latency_front_minus_temp_sec": -2.222,
+        "causal_direction": "Frontal -> Temporal"
+      }
+    },
+    "s11.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 1.0587307040339822,
+          "variance": 0.0012744568066637967,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 4.048
+        },
+        "F8": {
+          "baseline_stability_mean": 0.9071199373522767,
+          "variance": 0.023266878844634513,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 0.8584547643382944,
+          "variance": 0.039027872564499896,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.8200720639347799,
+          "variance": 0.042070509003100075,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 0.783897622698266,
+          "variance": 0.004880181552854357,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.9926928818520137,
+          "variance": 0.0243508483001495,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.8542246872978574,
+          "variance": 0.030333215204926347,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T3": {
+          "baseline_stability_mean": 0.897455720850185,
+          "variance": 0.027704527450405945,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 0.837747441260572,
+          "variance": 0.019136130999057054,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 0.7707465329399089,
+          "variance": 0.009676612576962841,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.9341370495135606,
+          "variance": 0.033754494337400937,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C4": {
+          "baseline_stability_mean": 0.8226573740977503,
+          "variance": 0.02678834131448901,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 0.7959075859865942,
+          "variance": 0.01011835088264195,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 0.8957640291947729,
+          "variance": 0.019807965549731896,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C3": {
+          "baseline_stability_mean": 0.907570277165085,
+          "variance": 0.012893396630879026,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 0.8657818607527521,
+          "variance": 0.014957314567692146,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.8873545655680212,
+          "variance": 0.008203251470700374,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.8355056417442609,
+          "variance": 0.007840735425369663,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.8288789246936508,
+          "variance": 0.018624755047256192,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": "Insufficient lock-ins to calculate latency cascade."
+    },
+    "s12.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.7836108523278301,
+          "variance": 0.05232418955824632,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.8485928735757007,
+          "variance": 0.03882007933936434,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 0.9465486228952895,
+          "variance": 0.013446113444297806,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.9209118943839596,
+          "variance": 0.021087200722561428,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 0.9525028473944835,
+          "variance": 0.013941525180380434,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.772375694701107,
+          "variance": 0.059774253446940664,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.8809480934311902,
+          "variance": 0.04268198341748358,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T3": {
+          "baseline_stability_mean": 0.9840678218988819,
+          "variance": 0.041242736407165956,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 0.7307607411909679,
+          "variance": 0.002804365155479883,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 0.9781762390004152,
+          "variance": 0.0055998953972371465,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.8999387010485266,
+          "variance": 0.03484632427310787,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.764
+        },
+        "C4": {
+          "baseline_stability_mean": 0.9619993161505727,
+          "variance": 0.009225071210061124,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 0.9840741643236238,
+          "variance": 0.004676412992442917,
+          "dysrhythmia_type": "saturation",
+          "onset_sec": 9.748
+        },
+        "F3": {
+          "baseline_stability_mean": 0.8987190248650985,
+          "variance": 0.038360863873927904,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "C3": {
+          "baseline_stability_mean": 0.9540078721956797,
+          "variance": 0.025316563465658797,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 0.9667115068038812,
+          "variance": 0.020840496141297744,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.8896620602277543,
+          "variance": 0.040609103868566775,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.9202835267718558,
+          "variance": 0.024691108041206306,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.9346818147551736,
+          "variance": 0.02785496527838599,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": "Insufficient lock-ins to calculate latency cascade."
+    },
+    "s13.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.927178398868324,
+          "variance": 0.0037207730452870663,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F8": {
+          "baseline_stability_mean": 0.9456064148243466,
+          "variance": 0.0017317549461358306,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "T4": {
+          "baseline_stability_mean": 0.9061208090287339,
+          "variance": 0.00377801202673733,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T6": {
+          "baseline_stability_mean": 0.9599331104507884,
+          "variance": 0.0032637710738199553,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O2": {
+          "baseline_stability_mean": 0.8952136586038489,
+          "variance": 0.008510494416052273,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.905027429933044,
+          "variance": 0.00479671690899601,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F7": {
+          "baseline_stability_mean": 0.9258843111679421,
+          "variance": 0.0035918999215293116,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.76
+        },
+        "T3": {
+          "baseline_stability_mean": 0.9098688683794819,
+          "variance": 0.017110316342300643,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "T5": {
+          "baseline_stability_mean": 0.8947371568321759,
+          "variance": 0.007834708800102301,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "O1": {
+          "baseline_stability_mean": 0.9090625196982961,
+          "variance": 0.006945969629312138,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F4": {
+          "baseline_stability_mean": 0.9221018989213166,
+          "variance": 0.00188265861229374,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "C4": {
+          "baseline_stability_mean": 0.8838772086390186,
+          "variance": 0.0024882006662936256,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P4": {
+          "baseline_stability_mean": 0.8738761922550401,
+          "variance": 0.0030764735110571893,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "F3": {
+          "baseline_stability_mean": 0.8901353140572791,
+          "variance": 0.00404681025717523,
+          "dysrhythmia_type": null,
+          "onset_sec": null
+        },
+        "C3": {
+          "baseline_stability_mean": 0.8941934347574447,
+          "variance": 0.011467712843440043,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "P3": {
+          "baseline_stability_mean": 0.8994146468126938,
+          "variance": 0.009771259686604165,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.8939368952217135,
+          "variance": 0.001999150915126882,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.8923944768690854,
+          "variance": 0.002619137349139495,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.8899571188791565,
+          "variance": 0.0032914110241057714,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": null
+        }
+      },
+      "propagation_analysis": "Insufficient lock-ins to calculate latency cascade."
+    },
+    "s14.edf": {
+      "channels": {
+        "Fp2": {
+          "baseline_stability_mean": 0.8049798868096575,
+          "variance": 0.0018230200993375996,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 2.424
+        },
+        "F8": {
+          "baseline_stability_mean": 0.8139487117266253,
+          "variance": 0.0017316500793483102,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 8.056
+        },
+        "T4": {
+          "baseline_stability_mean": 0.8023398320902103,
+          "variance": 0.0018826472303945913,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.344
+        },
+        "T6": {
+          "baseline_stability_mean": 0.779177427171345,
+          "variance": 0.00218587011884169,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.124
+        },
+        "O2": {
+          "baseline_stability_mean": 0.7823691740376361,
+          "variance": 0.0022168701452779816,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.76
+        },
+        "Fp1": {
+          "baseline_stability_mean": 0.8028710380271101,
+          "variance": 0.002179505196800855,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.088
+        },
+        "F7": {
+          "baseline_stability_mean": 0.8421207489495623,
+          "variance": 0.0011350218088032854,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.756
+        },
+        "T3": {
+          "baseline_stability_mean": 0.7842032950035879,
+          "variance": 0.0013253514321753734,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.36
+        },
+        "T5": {
+          "baseline_stability_mean": 0.7910891014204056,
+          "variance": 0.002445459115914631,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.052
+        },
+        "O1": {
+          "baseline_stability_mean": 0.7799667798217581,
+          "variance": 0.001980191302874864,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.36
+        },
+        "F4": {
+          "baseline_stability_mean": 0.7942882105639312,
+          "variance": 0.0022503176425142375,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 9.76
+        },
+        "C4": {
+          "baseline_stability_mean": 0.7691678217945763,
+          "variance": 0.0012170533729386503,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.464
+        },
+        "P4": {
+          "baseline_stability_mean": 0.7665410507927984,
+          "variance": 0.0014765810049061983,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.176
+        },
+        "F3": {
+          "baseline_stability_mean": 0.7960330630627944,
+          "variance": 0.0014731518485322725,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 2.956
+        },
+        "C3": {
+          "baseline_stability_mean": 0.7518078521490394,
+          "variance": 0.001856382870773064,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.668
+        },
+        "P3": {
+          "baseline_stability_mean": 0.7439468924596013,
+          "variance": 0.0018625685493611581,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 0.952
+        },
+        "Fz": {
+          "baseline_stability_mean": 0.7892678753930116,
+          "variance": 0.0018137304744191079,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.908
+        },
+        "Cz": {
+          "baseline_stability_mean": 0.7742106265390191,
+          "variance": 0.001253313253038206,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.252
+        },
+        "Pz": {
+          "baseline_stability_mean": 0.7671585870190781,
+          "variance": 0.0013725574591648818,
+          "dysrhythmia_type": "collapse",
+          "onset_sec": 1.068
+        }
+      },
+      "propagation_analysis": {
+        "temporal_mean_onset_sec": 1.2200000000000002,
+        "frontal_mean_onset_sec": 3.6271999999999998,
+        "latency_front_minus_temp_sec": 2.4071999999999996,
+        "causal_direction": "Temporal -> Frontal"
+      }
+    }
+  }
+}
