@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geometric Neuron — The Standing Wave and Its Derivative</title>
+<style>
+  :root{
+    --bg:#05060f; --ink:#aeb9d6; --ink-dim:#5a6488; --line:#1b2240;
+    --teal:#36e6c8; --amber:#ffb454; --rose:#ff5d7a; --violet:#9d7bea;
+    --gold:#ffe08a; --cool:#4a7bff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); overflow:hidden;
+    font-family:"IBM Plex Mono","SFMono-Regular",ui-monospace,Consolas,monospace;
+    color:var(--ink);
+  }
+  canvas{position:absolute; top:0; left:0; display:block}
+  .panel{
+    position:absolute; z-index:10; background:rgba(8,10,22,.82);
+    backdrop-filter:blur(8px);
+    border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+    box-shadow:0 12px 40px rgba(0,0,0,.45);
+  }
+  .panel h3{
+    margin:0 0 12px; font-size:12px; letter-spacing:.18em; font-weight:600;
+    text-transform:uppercase; color:var(--teal);
+  }
+  #controls{top:18px; left:18px; width:268px}
+  #state{top:18px; right:18px; width:296px; font-size:12px; line-height:1.6}
+  #theory{bottom:18px; left:18px; width:392px; font-size:11px; line-height:1.55}
+  .cg{margin-bottom:14px}
+  .cg label{display:flex; justify-content:space-between; font-size:11px;
+    color:var(--ink-dim); margin-bottom:6px; letter-spacing:.04em}
+  .cg label b{color:var(--ink); font-weight:600}
+  input[type=range]{-webkit-appearance:none; width:100%; height:3px;
+    background:var(--line); border-radius:3px; outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;
+    width:14px; height:14px; border-radius:50%; background:var(--teal);
+    cursor:pointer; box-shadow:0 0 8px var(--teal)}
+  .btns{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px}
+  button{flex:1 1 auto; padding:8px 6px; font-family:inherit; font-size:10px;
+    letter-spacing:.06em; background:transparent; color:var(--teal);
+    border:1px solid var(--teal); border-radius:8px; cursor:pointer;
+    transition:.15s; text-transform:uppercase}
+  button:hover{background:var(--teal); color:var(--bg)}
+  button.warm{color:var(--amber); border-color:var(--amber)}
+  button.warm:hover{background:var(--amber); color:var(--bg)}
+  .row{display:flex; justify-content:space-between; margin-bottom:3px}
+  .row span:last-child{color:var(--ink); font-weight:600}
+  .big{font-size:13px}
+  .legend{margin-top:10px; padding-top:10px; border-top:1px solid var(--line);
+    font-size:10px; color:var(--ink-dim)}
+  .dot{display:inline-block; width:8px; height:8px; border-radius:50%;
+    margin-right:7px; vertical-align:middle}
+  .verdict{margin-top:10px; padding-top:10px; border-top:1px solid var(--line);
+    color:var(--ink-dim); font-size:10px; font-style:italic}
+  em{color:var(--teal); font-style:normal}
+  .k{color:var(--amber)}
+  #islandStrip{position:absolute; left:50%; transform:translateX(-50%);
+    bottom:18px; z-index:10; display:flex; gap:10px; padding:10px 14px;
+    background:rgba(8,10,22,.82); border:1px solid var(--line);
+    border-radius:12px; backdrop-filter:blur(8px)}
+  .isl{width:46px; text-align:center; font-size:9px; color:var(--ink-dim)}
+  .isl canvas{position:static; border-radius:6px; border:1px solid var(--line)}
+  .isl.active{color:var(--gold)}
+  .isl.active canvas{border-color:var(--gold); box-shadow:0 0 10px rgba(255,224,138,.4)}
+  .title-strip{position:absolute; bottom:18px; right:18px; z-index:10;
+    text-align:right; font-size:10px; color:var(--ink-dim); line-height:1.5}
+  .title-strip b{color:var(--teal); font-size:12px; letter-spacing:.1em}
+</style>
+</head>
+<body>
+<canvas id="field"></canvas>
+
+<div class="panel" id="controls">
+  <h3>Geometric Neuron</h3>
+  <div class="cg">
+    <label>Johnson–Nyquist noise <b id="vNoise">0.06</b></label>
+    <input type="range" id="noise" min="0" max="0.30" step="0.01" value="0.06">
+  </div>
+  <div class="cg">
+    <label>Cable RC (delay decay) <b id="vRC">0.93</b></label>
+    <input type="range" id="rc" min="0.80" max="0.985" step="0.005" value="0.93">
+  </div>
+  <div class="cg">
+    <label>Lock strength (scorch) <b id="vLock">0.50</b></label>
+    <input type="range" id="lock" min="0" max="1" step="0.05" value="0.50">
+  </div>
+  <div class="cg">
+    <label>AIS spike threshold <b id="vThr">0.30</b></label>
+    <input type="range" id="thr" min="0.08" max="0.80" step="0.02" value="0.30">
+  </div>
+  <div class="btns">
+    <button id="bChange">Change input</button>
+    <button id="bNoise" class="warm">Noise burst</button>
+  </div>
+  <div class="btns" style="margin-top:6px">
+    <button id="bReset">Reset islands</button>
+  </div>
+</div>
+
+<div class="panel" id="state">
+  <h3>State of Being</h3>
+  <div class="row big"><span>Standing-wave lock</span><span id="sLock">0.00</span></div>
+  <div class="row"><span>Spike rate (Hz-ish)</span><span id="sRate">0.0</span></div>
+  <div class="row"><span>Active spectral island</span><span id="sIsland">—</span></div>
+  <div class="row"><span>Spectral islands held</span><span id="sNisl">1</span></div>
+  <div class="row"><span>AIS spike origin</span><span id="sPos">—</span></div>
+  <div class="row"><span>Input frequency</span><span id="sFreq">0.080</span></div>
+  <div class="legend">
+    <div><span class="dot" style="background:var(--teal)"></span>Standing wave — the content</div>
+    <div><span class="dot" style="background:var(--gold)"></span>Spike — the derivative of the wave</div>
+    <div><span class="dot" style="background:var(--cool)"></span>Thermal-noise substrate</div>
+    <div><span class="dot" style="background:var(--rose)"></span>Frustration → new island born</div>
+  </div>
+  <div class="verdict" id="verdict">Searching — no island matches yet.</div>
+</div>
+
+<div class="panel" id="theory">
+  <h3>What you are watching</h3>
+  <div>
+    The dendritic cable is a <em>Takens delay line</em>: position along it is age of
+    signal — time unrolled into space. <span class="k">Thermal noise</span> dithers the
+    sampler so it never sticks. The <em>AIS</em> reads the cable through its 190&nbsp;nm
+    grating and compares the geometry to its learned <em>spectral islands</em>
+    (Koopman modes).
+    <br><br>
+    When the input matches an island, a <em>standing wave</em> precipitates and holds —
+    that locked wave <em>is</em> the current state of being. And here is the whole point:
+    <span class="k">the spike is not the content — the spike is the derivative.</span>
+    When the wave is locked, dW/dt&nbsp;≈&nbsp;0 and the neuron goes <em>quiet</em> while
+    fully representing. Change the input and the wave must move: a burst of spikes marks
+    the difference, then silence returns. Watch the spike rate <em>drop</em> as the lock
+    climbs.
+  </div>
+  <div class="verdict">The wave is the integral. The spike is the differential. — standing-wave thesis</div>
+</div>
+
+<div id="islandStrip"></div>
+
+<div class="title-strip">
+  <b>GEOMETRIC NEURON</b><br>
+  the standing wave and its derivative<br>
+  PerceptionLab · was: Fractal Surfer
+</div>
+
+<script>
+const canvas = document.getElementById('field');
+const ctx = canvas.getContext('2d');
+function resize(){ canvas.width=innerWidth; canvas.height=innerHeight; }
+resize(); addEventListener('resize', ()=>{ resize(); neuron.relayout(); });
+
+// ── tiny vector helpers ──────────────────────────────────────────────
+const dot=(a,b)=>{let s=0;for(let i=0;i<a.length;i++)s+=a[i]*b[i];return s;};
+const norm=v=>{let n=Math.hypot(...v)+1e-9;return v.map(x=>x/n);};
+const randn=()=>{ // Box–Muller
+  let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
+  return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
+};
+
+// ── the geometric neuron ─────────────────────────────────────────────
+class GeometricNeuron{
+  constructor(){
+    // dendritic cable = Takens delay line
+    this.N = 96;                 // compartments
+    this.cable = new Float64Array(this.N);
+    this.rc = 0.93;
+    this.noise = 0.06;
+    this.lockStrength = 0.50;
+    this.threshold = 0.30;
+
+    // AIS grating: periodic sample positions (the 190nm scaffold)
+    this.period = 3;
+    this.gpos = [];
+    for(let i=0;i<this.N;i+=this.period) this.gpos.push(i);
+    this.dim = this.gpos.length;
+
+    // spectral islands = learned Koopman templates (the W matrix)
+    this.islands = [];           // each: normalized vector over grating samples
+    this.islandFreq = [];        // remembered driving frequency, for the strip
+    this.maxIslands = 7;
+    this.noveltyTh = 0.55;
+
+    // input
+    this.inFreq = 0.08;
+    this.inPhase = 0;
+
+    // dynamics state
+    this.R = 0;                  // resonance / standing-wave amplitude
+    this.prevR = 0;
+    this.lock = 0;               // smoothed standing-wave lock
+    this.spikeDrive = 0;
+    this.bestIsland = -1;
+    this.spikePos = -1;          // AIS position where spike initiated
+    this.spikeRate = 0;
+    this.spikes = [];            // travelling spikes on the axon
+    this.raster = [];            // {t, pos} recent spike events
+    this.lockTrace = [];         // recent lock values
+    this.t = 0;
+    this.flash = 0;
+    this.bornFlash = 0;
+
+    this.relayout();
+  }
+
+  relayout(){
+    this.cx = canvas.width*0.5;
+    this.cy = canvas.height*0.5;
+    this.soma = Math.min(canvas.width,canvas.height)*0.045;
+    // dendrite anchor directions
+    this.nDend = 12;
+    this.dend = [];
+    for(let i=0;i<this.nDend;i++){
+      const a = (i/this.nDend)*Math.PI*2 - Math.PI/2;
+      this.dend.push({a, len: this.soma*5.2 + (i%3)*this.soma*0.6});
+    }
+    // field grid
+    this.gw = Math.max(40, Math.floor(canvas.width/22));
+    this.gh = Math.max(24, Math.floor(canvas.height/22));
+  }
+
+  sampleCable(){
+    const s = new Float64Array(this.dim);
+    for(let i=0;i<this.dim;i++) s[i]=this.cable[this.gpos[i]];
+    return norm(Array.from(s));
+  }
+
+  step(){
+    this.t++;
+    // 1) drive the delay line with input + thermal noise
+    const x = Math.sin(this.inPhase) + this.noise*randn();
+    this.inPhase += this.inFreq;
+    // propagate inward, RC decay (time -> space) + per-compartment thermal noise
+    for(let i=this.N-1;i>0;i--)
+      this.cable[i] = this.cable[i-1]*this.rc + this.noise*0.35*randn();
+    this.cable[0] = x;
+
+    // 2) AIS grating samples the manifold
+    const v = this.sampleCable();
+
+    // 3) seed first island if empty
+    if(this.islands.length===0){
+      this.islands.push(v.slice());
+      this.islandFreq.push(this.inFreq);
+    }
+
+    // 4) resonance against every spectral island (Koopman match)
+    let best=-1, bestR=0;
+    for(let k=0;k<this.islands.length;k++){
+      const a = dot(this.islands[k], v);
+      const r = a*a;
+      if(r>bestR){ bestR=r; best=k; }
+    }
+    this.bestIsland = best;
+    this.R = bestR;
+
+    // 5) standing wave lock tracks resonance (the content), smoothed
+    this.lock = this.lock*0.90 + this.R*0.10;
+
+    // 6) THE SPIKE IS THE DERIVATIVE of the standing wave
+    const dR = this.R - this.prevR;
+    this.spikeDrive = this.spikeDrive*0.80 + Math.abs(dR)*6.0;
+    this.prevR = this.R;
+    let fired=false;
+    if(this.spikeDrive > this.threshold){
+      fired=true;
+      // Nav1.6 (distal) -> Nav1.2 (proximal): position encodes match strength
+      this.spikePos = Math.min(this.dim-1, Math.floor(this.R*this.dim));
+      this.spikes.push({prog:0, strength:Math.min(1,this.spikeDrive)});
+      this.raster.push({t:this.t, pos:this.R});
+      this.spikeDrive = 0;
+      this.flash = 1;
+    }
+    // running spike rate
+    this.spikeRate = this.spikeRate*0.95 + (fired?1:0)*0.05*60;
+
+    // 7) learning: scorch the matched island toward current geometry
+    if(best>=0 && this.R>0.35){
+      const isl=this.islands[best], eta=0.012*this.lockStrength*this.R;
+      for(let i=0;i<this.dim;i++) isl[i]=isl[i]*(1-eta)+v[i]*eta;
+      this.islands[best]=norm(isl);
+    }
+
+    // 8) frustration -> birth a new spectral island from the residual
+    const novelty = 1 - this.R;
+    if(novelty>this.noveltyTh && this.islands.length<this.maxIslands &&
+       this.lockStrength>0.05){
+      // residual = v minus its projection on existing islands
+      const res=v.slice();
+      for(const isl of this.islands){
+        const c=dot(isl,res);
+        for(let i=0;i<this.dim;i++) res[i]-=c*isl[i];
+      }
+      const rn=Math.hypot(...res);
+      if(rn>0.25){
+        this.islands.push(norm(res));
+        this.islandFreq.push(this.inFreq);
+        this.bornFlash=1;
+      }
+    }
+
+    // 9) advance travelling spikes
+    for(const s of this.spikes) s.prog += 0.035;
+    this.spikes = this.spikes.filter(s=>s.prog<1);
+
+    // traces
+    this.lockTrace.push(this.lock);
+    if(this.lockTrace.length>220) this.lockTrace.shift();
+    if(this.raster.length>240) this.raster.shift();
+    this.flash *= 0.85;
+    this.bornFlash *= 0.92;
+  }
+
+  changeInput(){
+    // jump to a new driving frequency -> forces the wave to move (spike burst)
+    const opts=[0.045,0.08,0.12,0.17,0.23,0.31];
+    let f; do{ f=opts[(Math.random()*opts.length)|0]; }while(Math.abs(f-this.inFreq)<0.02);
+    this.inFreq=f;
+  }
+  noiseBurst(){
+    for(let i=0;i<this.N;i++) this.cable[i]+=randn()*0.8;
+  }
+  reset(){
+    this.islands=[]; this.islandFreq=[]; this.lock=0; this.R=0; this.prevR=0;
+  }
+}
+
+const neuron = new GeometricNeuron();
+
+// ── rendering ────────────────────────────────────────────────────────
+function render(){
+  const W=canvas.width, H=canvas.height;
+  // trailing fade
+  ctx.fillStyle='rgba(5,6,15,0.22)';
+  ctx.fillRect(0,0,W,H);
+
+  drawField();
+  drawDendrites();
+  drawAIS();
+  drawSoma();
+  drawSpikes();
+  drawRaster();
+}
+
+// the standing-wave field: Moiré interference of active spectral islands
+function drawField(){
+  const W=canvas.width, H=canvas.height, gw=neuron.gw, gh=neuron.gh;
+  const cw=W/gw, ch=H/gh;
+  const lock=neuron.lock;
+  // a couple of spatial-frequency vectors keyed to the active island
+  const k = 0.35 + (neuron.bestIsland>=0 ? neuron.islandFreq[neuron.bestIsland]*6 : 0.5);
+  const ph = neuron.t*0.05;
+  const ang = neuron.bestIsland*0.7;
+  for(let gx=0; gx<gw; gx++){
+    for(let gy=0; gy<gh; gy++){
+      const nx=(gx/gw-0.5), ny=(gy/gh-0.5);
+      // standing wave = sum of two tilted plane waves (Moiré)
+      const w1=Math.cos((nx*Math.cos(ang)+ny*Math.sin(ang))*k*40 - ph);
+      const w2=Math.cos((nx*Math.cos(ang+1.05)+ny*Math.sin(ang+1.05))*k*40 + ph*0.7);
+      let val=(w1+w2)*0.5;
+      // thermal-noise substrate (always present, dominates when unlocked)
+      const therm=(Math.random()*2-1);
+      val = val*lock + therm*(1-lock)*0.6;
+      const a=Math.abs(val);
+      let r,g,b;
+      if(val>0){ // warm crest
+        r=255*a; g=(180*a)*lock+60; b=84*a;
+      }else{     // cool trough / noise
+        r=74*a*(1-lock); g=123*a; b=255*a;
+      }
+      const alpha = lock>0.15 ? 0.18+0.42*a : 0.06+0.10*a;
+      ctx.fillStyle=`rgba(${r|0},${g|0},${b|0},${alpha})`;
+      ctx.fillRect(gx*cw, gy*ch, cw+1, ch+1);
+    }
+  }
+}
+
+function drawDendrites(){
+  const {cx,cy,soma}=neuron;
+  for(let d=0; d<neuron.dend.length; d++){
+    const {a,len}=neuron.dend[d];
+    const ex=cx+Math.cos(a)*len, ey=cy+Math.sin(a)*len;
+    // the cable as a chain of beads: position = age of signal (delay embed)
+    const beads=18;
+    for(let i=0;i<beads;i++){
+      const f=i/(beads-1);
+      const px=cx+Math.cos(a)*(soma + f*(len-soma));
+      const py=cy+Math.sin(a)*(soma + f*(len-soma));
+      // membrane value at this depth (map bead to a cable compartment)
+      const ci=Math.floor(f*(neuron.N-1));
+      const mv=neuron.cable[ci];
+      const m=Math.min(1,Math.abs(mv));
+      const recent=1-f; // tip(base near soma) = newest
+      ctx.beginPath();
+      ctx.arc(px,py, 1.4+2.6*m, 0, Math.PI*2);
+      const hue = mv>0 ? '255,180,84' : '74,123,255';
+      ctx.fillStyle=`rgba(${hue},${0.15+0.7*m})`;
+      ctx.fill();
+    }
+    // faint dendrite spine
+    ctx.beginPath();
+    ctx.moveTo(cx+Math.cos(a)*soma, cy+Math.sin(a)*soma);
+    ctx.lineTo(ex,ey);
+    ctx.strokeStyle='rgba(90,100,136,0.18)';
+    ctx.lineWidth=1; ctx.stroke();
+  }
+}
+
+function drawAIS(){
+  // the AIS grating between soma and axon hillock: periodic Nav lattice
+  const {cx,cy,soma}=neuron;
+  const ax = cx + soma*1.0, ay = cy; // axon goes right
+  const segLen = soma*2.6, n=neuron.dim;
+  for(let i=0;i<n;i++){
+    const f=i/(n-1);
+    const x=ax + f*segLen;
+    // Nav1.6 distal (low thr, left) -> Nav1.2 proximal: color gradient
+    const t=f;
+    const r=(54+ (255-54)*t)|0, g=(230 - 100*t)|0, b=(200 - 80*t)|0;
+    // light up the lattice position where the spike just initiated
+    const lit = (i===neuron.spikePos) ? 1 : 0.25;
+    ctx.fillStyle=`rgba(${r},${g},${b},${0.25+0.65*lit*neuron.flash+0.12})`;
+    ctx.fillRect(x, ay-7, 2.4, 14);
+  }
+  // axon line
+  ctx.beginPath();
+  ctx.moveTo(ax,ay); ctx.lineTo(ax+segLen+soma*6, ay);
+  ctx.strokeStyle='rgba(90,100,136,0.25)'; ctx.lineWidth=2; ctx.stroke();
+  // label
+  ctx.fillStyle='rgba(90,100,136,0.6)'; ctx.font='9px monospace';
+  ctx.textAlign='center';
+  ctx.fillText('AIS grating  ·  Nav1.6→Nav1.2', ax+segLen*0.5, ay-16);
+}
+
+function drawSoma(){
+  const {cx,cy,soma,lock}=neuron;
+  // soma glow scales with standing-wave lock (content present even when silent)
+  const g=ctx.createRadialGradient(cx,cy,soma*0.2,cx,cy,soma*2.4);
+  g.addColorStop(0,`rgba(54,230,200,${0.25+0.5*lock})`);
+  g.addColorStop(1,'rgba(54,230,200,0)');
+  ctx.fillStyle=g;
+  ctx.beginPath(); ctx.arc(cx,cy,soma*2.4,0,Math.PI*2); ctx.fill();
+  // body
+  ctx.beginPath(); ctx.arc(cx,cy,soma,0,Math.PI*2);
+  ctx.fillStyle=`rgba(10,16,30,0.92)`; ctx.fill();
+  ctx.lineWidth=2;
+  ctx.strokeStyle = lock>0.5 ? `rgba(255,224,138,${0.5+0.5*lock})`
+                             : `rgba(54,230,200,0.7)`;
+  ctx.stroke();
+  // lock readout
+  ctx.fillStyle='#aeb9d6'; ctx.font=`${(soma*0.6)|0}px monospace`;
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(lock.toFixed(2), cx, cy);
+  ctx.textBaseline='alphabetic';
+}
+
+function drawSpikes(){
+  const {cx,cy,soma}=neuron;
+  const ax=cx+soma*1.0, ay=cy, segLen=soma*2.6, axonEnd=ax+segLen+soma*6;
+  for(const s of neuron.spikes){
+    const x = ax + s.prog*(axonEnd-ax);
+    const glow=ctx.createRadialGradient(x,ay,0,x,ay,10+8*s.strength);
+    glow.addColorStop(0,`rgba(255,224,138,${0.9*s.strength})`);
+    glow.addColorStop(1,'rgba(255,224,138,0)');
+    ctx.fillStyle=glow;
+    ctx.beginPath(); ctx.arc(x,ay,10+8*s.strength,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle=`rgba(255,255,255,${s.strength})`;
+    ctx.beginPath(); ctx.arc(x,ay,2.5,0,Math.PI*2); ctx.fill();
+  }
+}
+
+// bottom-center scrolling raster: spike events vs standing-wave lock
+function drawRaster(){
+  const W=canvas.width;
+  const x0=W*0.30, x1=W*0.70, y=canvas.height-92, h=46;
+  // backdrop
+  ctx.fillStyle='rgba(8,10,22,0.55)';
+  ctx.fillRect(x0-8,y-8,(x1-x0)+16,h+16);
+  ctx.strokeStyle='rgba(27,34,64,0.9)'; ctx.lineWidth=1;
+  ctx.strokeRect(x0-8,y-8,(x1-x0)+16,h+16);
+  // lock trace (the standing wave = content)
+  ctx.beginPath();
+  const tr=neuron.lockTrace;
+  for(let i=0;i<tr.length;i++){
+    const px=x0+(i/(tr.length-1))*(x1-x0);
+    const py=y+h-tr[i]*h;
+    i?ctx.lineTo(px,py):ctx.moveTo(px,py);
+  }
+  ctx.strokeStyle='rgba(54,230,200,0.9)'; ctx.lineWidth=1.5; ctx.stroke();
+  // spike ticks (the derivative) — cluster where the trace moves
+  const tNow=neuron.t, span=220;
+  for(const r of neuron.raster){
+    const age=tNow-r.t; if(age>span) continue;
+    const px=x1-(age/span)*(x1-x0);
+    ctx.strokeStyle=`rgba(255,224,138,0.85)`;
+    ctx.lineWidth=1.5; ctx.beginPath();
+    ctx.moveTo(px,y); ctx.lineTo(px,y+h*0.4); ctx.stroke();
+  }
+  ctx.fillStyle='rgba(90,100,136,0.85)'; ctx.font='9px monospace'; ctx.textAlign='left';
+  ctx.fillText('standing wave (—) vs spikes (|)  ·  spikes fire where the wave moves', x0-4, y-12);
+}
+
+// ── spectral-island strip (the W matrix) ─────────────────────────────
+const strip=document.getElementById('islandStrip');
+function rebuildStrip(){
+  strip.innerHTML='';
+  neuron.islands.forEach((isl,k)=>{
+    const wrap=document.createElement('div');
+    wrap.className='isl'+(k===neuron.bestIsland?' active':'');
+    const c=document.createElement('canvas'); c.width=40; c.height=26;
+    const cc=c.getContext('2d');
+    cc.fillStyle='#0a1020'; cc.fillRect(0,0,40,26);
+    // draw the island template as a little waveform
+    cc.beginPath();
+    for(let i=0;i<isl.length;i++){
+      const px=(i/(isl.length-1))*40, py=13-isl[i]*22;
+      i?cc.lineTo(px,py):cc.moveTo(px,py);
+    }
+    cc.strokeStyle=k===neuron.bestIsland?'#ffe08a':'#36e6c8';
+    cc.lineWidth=1.3; cc.stroke();
+    wrap.appendChild(c);
+    const lbl=document.createElement('div');
+    lbl.textContent='I'+k+'·'+neuron.islandFreq[k].toFixed(2);
+    wrap.appendChild(lbl);
+    strip.appendChild(wrap);
+  });
+}
+
+// ── HUD ──────────────────────────────────────────────────────────────
+function hud(){
+  document.getElementById('sLock').textContent=neuron.lock.toFixed(2);
+  document.getElementById('sRate').textContent=neuron.spikeRate.toFixed(1);
+  document.getElementById('sIsland').textContent=
+    neuron.bestIsland>=0?('I'+neuron.bestIsland):'—';
+  document.getElementById('sNisl').textContent=neuron.islands.length;
+  const pos=neuron.spikePos;
+  document.getElementById('sPos').textContent =
+    pos<0?'—':(pos<neuron.dim*0.4?'distal (weak)':
+               pos>neuron.dim*0.66?'proximal (strong)':'mid');
+  document.getElementById('sFreq').textContent=neuron.inFreq.toFixed(3);
+
+  const v=document.getElementById('verdict');
+  if(neuron.bornFlash>0.3){
+    v.textContent='Frustration high — a new spectral island was just born.';
+    v.style.color='var(--rose)';
+  }else if(neuron.lock>0.55){
+    v.textContent='Locked. The wave holds; the neuron is nearly silent. This is content without spikes.';
+    v.style.color='var(--teal)';
+  }else if(neuron.spikeRate>4){
+    v.textContent='The wave is moving — spikes mark the change (the derivative).';
+    v.style.color='var(--gold)';
+  }else{
+    v.textContent='Searching — drifting between islands.';
+    v.style.color='var(--ink-dim)';
+  }
+}
+
+// ── controls ─────────────────────────────────────────────────────────
+const bind=(id,key,label,fmt=x=>x)=>{
+  const el=document.getElementById(id), out=document.getElementById(label);
+  el.oninput=e=>{ neuron[key]=parseFloat(e.target.value); out.textContent=fmt(e.target.value); };
+};
+bind('noise','noise','vNoise',x=>(+x).toFixed(2));
+bind('rc','rc','vRC',x=>(+x).toFixed(3));
+bind('lock','lockStrength','vLock',x=>(+x).toFixed(2));
+bind('thr','threshold','vThr',x=>(+x).toFixed(2));
+document.getElementById('bChange').onclick=()=>neuron.changeInput();
+document.getElementById('bNoise').onclick =()=>neuron.noiseBurst();
+document.getElementById('bReset').onclick =()=>neuron.reset();
+
+// ── main loop ────────────────────────────────────────────────────────
+let stripTick=0;
+function loop(){
+  // a few physics substeps per frame for smooth dynamics
+  for(let i=0;i<2;i++) neuron.step();
+  render();
+  if((stripTick++ % 12)===0){ rebuildStrip(); }
+  hud();
+  requestAnimationFrame(loop);
+}
+rebuildStrip();
+loop();
+</script>
+</body>
+</html>
